@@ -219,7 +219,15 @@ components:
           properties:
             name:
               type: string
-    
+    Response:
+      type: object
+      properties:
+        status:
+          type: bool
+          example: true
+        message:
+          type: string
+          example: Berhasil Input data
     ReqData:
       type: object
       properties:
