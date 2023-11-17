@@ -74,10 +74,6 @@ paths:
                 $ref: '#/components/schemas/Response'
         '405':
           description: Invalid input
-      security:
-        - Login:
-            - write:apiKey
-            - read:apiKey
   /InsertDataGeo:
     post:
       tags:
@@ -100,7 +96,7 @@ paths:
         '405':
           description: Invalid input          
       security:
-        - token:
+        - Login:
           - write:apiKey
           - read:apiKey
 
@@ -123,7 +119,7 @@ paths:
         '400':
           description: Invalid status value
       security:
-        - token:
+        - Login:
           - write:apiKey
           - read:apiKey
   /UpdateDataGeo:
@@ -148,7 +144,7 @@ paths:
         '405':
           description: Invalid input          
       security:
-        - token:
+        - Login:
           - write:apiKey
           - read:apiKey
 
@@ -176,7 +172,7 @@ paths:
         '400':
           description: Invalid status value
       security:
-        - token:
+        - Login:
           - write:apiKey
           - read:apiKey
 components:
@@ -317,7 +313,7 @@ components:
             items:
               $ref: '#/components/schemas/AuthResponse'
   securitySchemes:
-    token:
+    Login:
       type: apiKey
       name: token
       in: header
